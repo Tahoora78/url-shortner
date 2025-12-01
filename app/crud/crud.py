@@ -2,8 +2,8 @@ import os
 import random
 import string
 from sqlalchemy.orm import Session
-from .database import SessionLocal
-from . import models
+from ..database import SessionLocal
+from ..models import models
 from sqlalchemy.exc import IntegrityError
 import redis
 from contextlib import contextmanager

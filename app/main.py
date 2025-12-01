@@ -1,9 +1,12 @@
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import RedirectResponse
-from . import crud, models, schemas
+
+from .schemas import schemas
+from .models import models
+from .crud import crud
 from .database import engine
 import uvicorn
-from .logging import log_visit
+from .utils.logging import log_visit
 from .increment_runner import visit_queue
 
 models.Base.metadata.create_all(bind=engine)

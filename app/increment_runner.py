@@ -1,22 +1,16 @@
 # queue_tasker.py
 import queue
 import threading
-import time
-import os
-import random
-import string
 from sqlalchemy.orm import Session
 from .database import SessionLocal
-from . import models
+from .models import models
 from sqlalchemy.exc import IntegrityError
-import redis
 from contextlib import contextmanager
 from functools import lru_cache
 
 visit_queue = queue.Queue()
 
 def increment_visit_count(short_code: str):
-    # it should pop the elements from the queue and increment the count in the database
     db: Session = SessionLocal()
     try:
         url = db.query(models.URL).filter(models.URL.short_code == short_code).first()
@@ -31,6 +25,7 @@ def increment_visit_count(short_code: str):
 def worker():
     while True:
         short_code = visit_queue.get()
+        print("short_code from queue:", short_code)
         try:
             increment_visit_count(short_code)
         except Exception as e:
