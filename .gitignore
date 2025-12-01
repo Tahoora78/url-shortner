@@ -1,0 +1,84 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+venv-*/
+
+# Environment variables
+.env
+.env.*
+*.env
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage
+.coverage
+coverage.xml
+htmlcov/
+
+# Mypy / type checkers
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs and runtime files
+*.log
+logs/
+*.pid
+
+# Database files
+*.sqlite3
+*.db
+data/*.sqlite3
+data/*.db
+
+# Docker
+docker-compose.override.yml
+
+# Test / build artifacts
+.tox/
+.cache/
+__pypackages__/
+*.egg
+
+# Python wheel / egg build
+off
+
+# Editor temp files
+*~
+*.swp
+
+# Local instance/credentials
+instance/
+
+# Ruff / other caches
+.ruff_cache/
+
+# Byte-compiled files for other languages
+*.class
