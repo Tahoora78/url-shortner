@@ -1,3 +1,68 @@
+# URL Shortener
+
+Lightweight FastAPI-based URL shortener service. Includes DB migrations (Alembic), Docker support, and tests.
+
+**Status:** Minimal project scaffold — run locally or with Docker.
+
+**Contents:** `app/` (FastAPI app & DB models), `alembic/` (migrations), `tests/` (pytest).
+
+**Prerequisites**
+- Python 3.9+ (or the version in `requirements.txt`)
+- `git`, optionally Docker & Docker Compose
+
+**Local setup**
+1. Create a virtual environment and activate it:
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+3. Copy environment variables (example):
+```bash
+cp .env.example .env
+# Edit .env to set DB URL and any secrets
+```
+
+**Database migrations**
+- Initialize / run migrations with Alembic:
+```bash
+alembic upgrade head
+```
+
+**Run locally**
+```bash
+uvicorn app.main:app --reload
+# or if you prefer: python -m app.main
+```
+
+**Docker**
+- Build and run with Compose:
+```bash
+docker-compose up --build
+```
+
+**Tests**
+```bash
+pytest -q
+```
+
+**Useful git commands**
+- To ensure `.gitignore` takes effect for already-tracked files:
+```bash
+git add .gitignore
+git rm -r --cached .
+git add .
+git commit -m "Apply .gitignore"
+```
+
+**Contributing**
+- Open an issue or PR. Keep changes small and focused; add tests where appropriate.
+
+**Contact**
+- Project owner: `https://github.com/Tahoora78`
 # URL Shortener — Docker usage
 
 This repository contains a small FastAPI URL shortener.
@@ -33,7 +98,6 @@ Structure:
   - database.py
   - models.py
   - crud.py
-  - middleware.py
   - schemas.py
 - alembic/: Alembic migrations
 - SCALABILITY.md
