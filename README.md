@@ -99,6 +99,8 @@ Structure:
   - models.py
   - crud.py
   - schemas.py
+  - logging.py
+  - increment-runner.py
 - alembic/: Alembic migrations
 - SCALABILITY.md
 - requirements.txt
